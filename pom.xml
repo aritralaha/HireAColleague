@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>OpenCartV121</groupId>
-    <artifactId>OpenCartV121</artifactId>
+    <artifactId>HireAColleague</artifactId>
     <version>0.0.1</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -1,5 +1,6 @@
 package testBase;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -25,9 +26,6 @@ public class baseClass {
    public Properties propertiesObj;
    public String date3;
 
-
-
-public WebDriver wait;
 
     @BeforeClass
   public void setUp() throws IOException, InterruptedException {
@@ -139,7 +137,10 @@ public WebDriver wait;
         sourceFile.renameTo(targetFile);
     }
 
-
+    public String randomStringGenerator(){
+        String randomString = RandomStringUtils.randomAlphabetic(6);
+        return randomString;
+    }
 
 
 @AfterClass

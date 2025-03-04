@@ -47,6 +47,8 @@ public class personalDetailsPage extends basePage{
 
 
 
+
+
     public void setEnterSurname(String surnames) throws InterruptedException {
 
         driver.switchTo().frame(iframe);
@@ -96,6 +98,19 @@ public class personalDetailsPage extends basePage{
 
         driver.switchTo().defaultContent();
 
+    }
+
+    public void clearAndEnterSurname(String surname) throws InterruptedException {
+        driver.switchTo().frame(iframe);
+        Thread.sleep(1000);
+        enterSurname.clear();
+        Thread.sleep(500);
+        enterSurname.sendKeys(surname);
+        Thread.sleep(500);
+        enterSurname.sendKeys(Keys.TAB);
+        Thread.sleep(500);
+        driver.switchTo().defaultContent();
+        Thread.sleep(1000);
     }
 
 

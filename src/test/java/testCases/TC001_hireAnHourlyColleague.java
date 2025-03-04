@@ -1,12 +1,16 @@
 package testCases;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.*;
 import testBase.baseClass;
 import utilities.dataProvider;
 
+import java.io.IOException;
+
 public class TC001_hireAnHourlyColleague extends baseClass {
+
 
     @Test(dataProvider = "dp1",dataProviderClass= dataProvider.class)
     public void hireColleague(String empNo,String surname,String firstname,String gender,String nino,String address1,String address2,String address3,String address4,String county,String postcode,String stuctureUnit,String date,String sortCode,String accno,String post,String empType,String salary) throws InterruptedException {

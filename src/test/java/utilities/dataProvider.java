@@ -11,6 +11,8 @@ public class dataProvider {
     public String path3 = System.getProperty("user.dir")+"\\src\\testData\\setTerminationDate.xlsx";
     public String path4 = System.getProperty("user.dir")+"\\src\\testData\\cancelledLeaverData.xlsx";
     public String path5 = System.getProperty("user.dir")+"\\src\\testData\\ROIColleagueData.xlsx";
+    public String path6 = System.getProperty("user.dir")+"\\src\\testData\\Modification.xlsx";
+
 
     public excelUtility eutil;
     public int totalRow;
@@ -90,6 +92,21 @@ public class dataProvider {
         for(int i = 1;i<=totalRow;i++){
             for(int j =0;j<totalColumns;j++){
                 dataArray[i-1][j] = eutil.getCellValue(this.path5,"Sheet1",i,j);
+            }
+        }
+        return dataArray;
+    }
+
+    @DataProvider(name ="dp6")
+    public Object[][] enterModificationDetailForColleague() throws IOException {
+        eutil=new excelUtility();
+        totalRow = eutil.getTotalRows(this.path6,"Sheet1");
+        totalColumns= eutil.getTotalColumns(this.path6,"Sheet1",1);
+
+        String dataArray[][] = new String[totalRow][totalColumns];
+        for(int i=1;i<=totalRow;i++){
+            for(int j=0;j<totalColumns;j++){
+                dataArray[i-1][j]= eutil.getCellValue(this.path6,"Sheet1",i,j);
             }
         }
         return dataArray;
